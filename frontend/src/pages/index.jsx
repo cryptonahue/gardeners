@@ -1,4 +1,4 @@
-import { isLoggedIn } from '../../login/login.js';
+import { isLoggedIn } from '../../login/login.ts';
 
 import Card from '@mui/material/Card';
 
