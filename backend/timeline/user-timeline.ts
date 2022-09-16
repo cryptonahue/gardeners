@@ -1,12 +1,12 @@
 import { gql } from "@apollo/client/core";
 import { apolloClient } from "../apollo-client";
 import { PROFILE_ID } from "../config";
+import { getAddressFromSigner } from "../ethers.service";
 import { prettyJSON } from "../helpers";
-import { getDefaultProfileRequest } from "../profile/get-default-profile";
 
-const GET_PUBLICATIONS = `
-  query($request: PublicationsQueryRequest!) {
-    publications(request: $request) {
+const GET_TIMELINE = `
+  query($request: TimelineRequest!) {
+    timeline(request: $request) {
       items {
         __typename 
         ... on Post {
@@ -29,6 +29,8 @@ const GET_PUBLICATIONS = `
 
   fragment MediaFields on Media {
     url
+    width
+    height
     mimeType
   }
 
@@ -59,6 +61,12 @@ const GET_PUBLICATIONS = `
         original {
           ...MediaFields
         }
+        small {
+          ...MediaFields
+        }
+        medium {
+          ...MediaFields
+        }
       }
     }
     coverPicture {
@@ -70,6 +78,12 @@ const GET_PUBLICATIONS = `
       }
       ... on MediaSet {
         original {
+          ...MediaFields
+        }
+        small {
+         ...MediaFields
+        }
+        medium {
           ...MediaFields
         }
       }
@@ -122,6 +136,12 @@ const GET_PUBLICATIONS = `
     content
     media {
       original {
+        ...MediaFields
+      }
+      small {
+        ...MediaFields
+      }
+      medium {
         ...MediaFields
       }
     }
@@ -220,6 +240,9 @@ const GET_PUBLICATIONS = `
       }
     }
     appId
+    collectedBy {
+      ...WalletFields
+    }
     hidden
     reaction(request: null)
     mirrors(by: null)
@@ -285,6 +308,9 @@ const GET_PUBLICATIONS = `
       }
     }
     appId
+    collectedBy {
+      ...WalletFields
+    }
     hidden
     reaction(request: null)
     mirrors(by: null)
@@ -322,68 +348,24 @@ const GET_PUBLICATIONS = `
       }
     }
   }
+
+	fragment WalletFields on Wallet {
+   address,
+   defaultProfile {
+    ...ProfileFields
+   }
+	}
 `;
 
-// TODO types
-const getPublicationsRequest = (getPublicationQuery: any) => {
+export const getTimelineRequest = (profileId: string, limit: number) => {
   return apolloClient.query({
-    query: gql(GET_PUBLICATIONS),
+    query: gql(GET_TIMELINE),
     variables: {
-      request: getPublicationQuery,
+      request: {
+        profileId,
+        limit: limit,
+        sources: ["atlags"],
+      },
     },
   });
 };
-
-export const getPublications = async (address: string) => {
-  const profileId = (await getDefaultProfileRequest(address)).data.id;
-  if (!profileId) {
-    throw new Error("Not valid profileId");
-  }
-
-  const result = await getPublicationsRequest({
-    profileId,
-    publicationTypes: ["POST", "COMMENT", "MIRROR"],
-  });
-  prettyJSON("publications: result", result.data);
-
-  return result.data;
-};
-
-export const getPublicationsByTags = async (
-  address: string,
-  tags: string[]
-) => {
-  const profileId = (await getDefaultProfileRequest(address)).data.id;
-  if (!profileId) {
-    throw new Error("Not valid profileId");
-  }
-
-  const result = await getPublicationsRequest({
-    profileId,
-    publicationTypes: ["POST", "COMMENT", "MIRROR"],
-    sources: ["atlags"],
-    metadata: {
-      tags: { all: tags },
-    },
-  });
-  prettyJSON("publications: result", result.data);
-
-  return result.data;
-};
-
-/*
-export const getPublications = async () => {
-  const profileId = PROFILE_ID;
-  if (!profileId) {
-    throw new Error('Must define PROFILE_ID in the .env to run this');
-  }
-
-  const result = await getPublicationsRequest({
-    profileId,
-    publicationTypes: ['POST', 'COMMENT', 'MIRROR'],
-  });
-  prettyJSON('publications: result', result.data);
-
-  return result.data;
-};
-*/
