@@ -56,7 +56,10 @@ export const generateChallenge = async (address: string) => {
 export const isLoggedIn = async () => {
   if (getAuthenticationToken()) {
     console.log("login: already logged in");
-    return;
+    return true;
+  } else {
+    console.log("login: not logged in :(");
+    return false;
   }
 };
 
