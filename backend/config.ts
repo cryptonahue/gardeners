@@ -1,19 +1,25 @@
-import fs from "fs";
-import path from "path";
+/* import fs from "fs"; */
+/* import path from "path"; */
 require("dotenv").config();
 
-const fileLensHub = fs.readFileSync(
+var fileLensHub = require('abis/lens-hub-contract-abi.json');
+/* const fileLensHub = fs.readFileSync(
   path.join(__dirname, "abis/lens-hub-contract-abi.json"),
   "utf8"
-);
-const fileLensPeriphery = fs.readFileSync(
+); */
+
+var fileLensPeriphery = require('abis/lens-periphery-data-provider.json');
+/* const fileLensPeriphery = fs.readFileSync(
   path.join(__dirname, "abis/lens-periphery-data-provider.json"),
   "utf8"
-);
-const fileFollowNFT = fs.readFileSync(
+); */
+
+var fileFollowNFT = require('abis/lens-follow-nft-contract-abi.json');
+
+/* const fileFollowNFT = fs.readFileSync(
   path.join(__dirname, "abis/lens-follow-nft-contract-abi.json"),
   "utf8"
-);
+); */
 
 const getParamOrExit = (name: string) => {
   const param = process.env[name];
@@ -36,8 +42,8 @@ export const argsBespokeInit = () => {
   return process.argv.find((c) => c === "--init") !== undefined;
 };
 
-/* 
-export const PK = getParamOrExit("PK");
+
+/* export const PK = getParamOrExit("PK");
 
 export const MUMBAI_RPC_URL = getParamOrExit("MUMBAI_RPC_URL");
 
@@ -62,4 +68,4 @@ export const LENS_PERIPHERY_ABI = JSON.parse(fileLensPeriphery);
 export const INFURA_PROJECT_ID = getParam("INFURA_PROJECT_ID");
 
 export const INFURA_SECRET = getParam("INFURA_SECRET");
- */
+  */
