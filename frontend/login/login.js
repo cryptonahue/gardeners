@@ -29,7 +29,7 @@ const AUTHENTICATION = `
  }
 `;
 
-const authenticate = (address: string, signature: string) => {
+const authenticate = (address, signature) => {
   return apolloClient.mutate({
     mutation: gql(AUTHENTICATION),
     variables: {
@@ -41,7 +41,7 @@ const authenticate = (address: string, signature: string) => {
   });
 };
 
-export const generateChallenge = async (address: string) => {
+export const generateChallenge = async (address) => {
   const challengeResponse = await apolloClient.query({
     query: gql(GET_CHALLENGE),
     variables: {
@@ -63,7 +63,7 @@ export const isLoggedIn = async () => {
   }
 };
 
-export const auth = async (address: string, signature: string) => {
+export const auth = async (address, signature) => {
   const accessTokens = await authenticate(address, signature);
   prettyJSON("login: result", accessTokens.data);
 

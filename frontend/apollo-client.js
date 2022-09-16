@@ -11,7 +11,7 @@ import fetch from 'cross-fetch';
 import { LENS_API } from './config';
 import { getAuthenticationToken } from './state';
 
-const defaultOptions: DefaultOptions = {
+const defaultOptions = {
   watchQuery: {
     fetchPolicy: 'no-cache',
     errorPolicy: 'ignore',
