@@ -1,13 +1,20 @@
-import { isLoggedIn } from '../../login/login.ts';
+import Head from "next/head";
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 
-import Card from '@mui/material/Card';
-
-function About() {
-  isLoggedIn().then(() => {
-
-    
-  })
-  return <div>About</div>
+function Home() {
+  return (
+    <>
+      <Head>
+        <title>Home</title>
+      </Head>
+      <AppBar position="static">
+        <Toolbar>
+          ATLAGS
+        </Toolbar>
+      </AppBar>
+    </>
+  );
 }
 
-export default About
+export default Home;
