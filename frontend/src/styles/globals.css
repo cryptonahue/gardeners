@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+/*   border: 1px solid gray; */
+}
+
+
+/* body {
+background-color: red !important;
+} */
+
+.Container {
+  width:100vw;
+ /*  background-color: blue; */
+  display: flex;
+  justify-content: center;
+}
+
+.Container_1200 {
+  width: 1250px;
+}
+
+.Separador {
+  border: 2px solid black;
+  height: 50px;
+  width: 1916px;
+}
+
+
+@import url(./buttons/buttons.css);
+@import url(./fonts/fonts.css);
+@import url(./header/header.css);
+@import url(./homepage/hero-home.css);
+
+
+
