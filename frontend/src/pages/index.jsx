@@ -3,6 +3,11 @@ import { signAuth, signTypedData, post, createTestProfile } from "../../utils/si
 import Head from "next/head";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import Hero from "../components/Hero_homepage/";
+import Hero_Whats from "../components/Hero_whats/";
+import Social from "../components/Home_social/";
+import Footer from "../components/Footer/";
+import NavbarHome from "../components/Navbar";
 
 import Link from "next/link";
 import Metamask from "../components/metamask.js";
@@ -62,6 +67,7 @@ const Index = () => {
 
   return (
     <>
+<<<<<<< HEAD
       {/* Navbar */}
       <nav className="fren-nav d-flex">
         <div>
@@ -140,6 +146,26 @@ const Index = () => {
           {/* ---- */}
         </main>
       </section>
+=======
+      <Head>
+        <title>Home</title>
+      </Head>
+      <NavbarHome></NavbarHome>
+   {/*    <AppBar position="static">
+        <Toolbar>
+          ATLAGS
+        </Toolbar>
+      </AppBar> */}
+      <div className="Container">
+        <div className="Background_Hero">
+        <Hero></Hero>
+        <Hero_Whats></Hero_Whats>
+        <Social></Social>
+        <Footer></Footer>
+        </div>
+     
+      </div>
+>>>>>>> dev
     </>
   );
 };

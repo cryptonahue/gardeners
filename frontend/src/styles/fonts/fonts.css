@@ -1,0 +1,52 @@
+
+ @layer base {
+
+    @font-face {
+        font-display: swap;
+        font-family: "Medhurst";
+        src: url("/fonts/Medhurst-regular.woff") format("woff");
+      }
+
+
+    @font-face {
+        font-display: swap;
+        font-family: "NeutralFace";
+        src: url("/fonts/NeutralFace-Bold.woff") format("woff");
+      }
+
+
+      
+      @font-face {
+        font-display: swap;
+        font-family: "NeutralFace";
+        src: url("/fonts/NeutralFace.woff") format("woff");
+      }
+
+    @font-face {
+      font-display: swap;
+      font-family: "Poppins";
+      src: url("/fonts/Poppins-Bold.woff") format("woff");
+    }
+  
+    @font-face {
+      font-display: swap;
+      font-family: "Roboto";
+      src: url("/fonts/Roboto-Bold.woff") format("woff");
+    }
+  
+    @font-face {
+      font-display: swap;
+      font-family: "Lato";
+      src: url("/fonts/Lato-Regular.woff") format("woff"),
+        url("/fonts/Lato-Bold.woff") format("woff"),
+        url("/fonts/Lato-Light.woff") format("woff");
+    }
+  
+    @font-face {
+      font-display: swap;
+      font-family: "RobotoMono";
+      src: url("/fonts/RobotoMono-Regular.woff") format("woff"),
+        url("/fonts/RobotoMono-Bold.woff") format("woff"),
+        url("/fonts/RobotoMono-Light.woff") format("woff");
+    }
+  } 
