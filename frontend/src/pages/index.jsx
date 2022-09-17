@@ -67,9 +67,8 @@ const Index = () => {
 
   return (
     <>
-<<<<<<< HEAD
       {/* Navbar */}
-      <nav className="fren-nav d-flex">
+     {/*  <nav className="fren-nav d-flex">
         <div>
           <h3>MENU_</h3>
         </div>
@@ -92,20 +91,14 @@ const Index = () => {
             </Link>
           </div>
         </div>
-      </nav>
+      </nav> */}
       {/* Navbar end */}
 
-      <section className="container d-flex">
-        <main>
-          <h1 className="main-title">Awesome DApp 🚀</h1>
-
-          <p className="main-desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem
-            suscipit perferendis tempore <br /> eveniet id pariatur error
-          </p>
+   {/*    <section className="container d-flex">
+        <main> */}
 
           {/* ---- */}
-          <p>
+       {/*    <p>
             {!haveMetamask ? (
               <Metamask />
             ) : client.isConnected ? (
@@ -142,11 +135,10 @@ const Index = () => {
                 </button>
               </>
             )}
-          </p>
+          </p> */}
           {/* ---- */}
-        </main>
-      </section>
-=======
+       {/*  </main> */}
+     {/*  </section> */}
       <Head>
         <title>Home</title>
       </Head>
@@ -165,7 +157,6 @@ const Index = () => {
         </div>
      
       </div>
->>>>>>> dev
     </>
   );
 };
