@@ -1,0 +1,38 @@
+.Hero_Whats_logo{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.Container_cards_wthas {
+   max-width: 1250px;
+    display: flex;
+   justify-content: space-evenly;
+}
+
+
+
+.Cards_wthas2 {
+   /*  border: 2px solid; */
+    height: 231;
+    padding: 25px;
+    margin:10px;
+}
+
+.Cards_wthas2:hover {
+    border-bottom:  4px solid black;
+    cursor: pointer;
+}
+
+
+.Card_Whats_Text h3 {
+    padding-bottom:15px ;
+    font-family: NeutralFace;
+    font-size: 1rem;
+}
+
+.Whats_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}

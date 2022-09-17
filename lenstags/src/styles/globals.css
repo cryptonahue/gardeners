@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+/*   border: 1px solid gray; */
+}
+
+
+/* body {
+background-color: red !important;
+} */
+
+.Container {
+  width:100vw;
+ /*  background-color: blue; */
+  display: flex;
+  justify-content: center;
+}
+
+.Container_1200 {
+  width: 1250px;
+}
+
+.Separador {
+  justify-content: center;
+  display: flex;
+  border: 2px solid black;
+  width: 1916px;
+}
+
+.Separador_links {
+  justify-content: space-evenly;
+  max-width: 1250px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.Separador_links div a {
+font-family: NeutralFace;
+text-transform: uppercase;
+padding: 5px;
+}
+
+.Separador_links div a:hover {
+ /*  border: 2px solid black; */
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px;
+  }
+
+.Hastag {
+  font-family: NeutralFace;
+  color: #DEF702;
+  padding: 0px 10px;
+}
+
+@import url(./buttons/buttons.css);
+@import url(./fonts/fonts.css);
+@import url(./header/header.css);
+@import url(./homepage/hero-home.css);
+@import url(./homepage/hero-whats.css);
+@import url(./homepage/home-social.css);
+@import url(./footer/footer.css);
+
+
+
