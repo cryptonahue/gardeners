@@ -21,6 +21,10 @@ a {
   }
   body {
     color: black;
-    background: #def702;
+    background: #DEF702;
+  }
+
+  a {
+    font-weight: 600;
   }
 }

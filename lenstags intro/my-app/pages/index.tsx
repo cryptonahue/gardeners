@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
@@ -12,32 +12,17 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-       
-
-      <img
-                      src="/img/logo.png"
-                      alt=""
-                      width="200"
-                      height="auto"
-                    ></img>
-
-        
+        <img src="/img/logo.png" alt="" width="200" height="auto"></img>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
+        <a href="#" rel="noopener noreferrer" className="font-semibold">
           
-            Gardeners
-          
+          Comming Soon
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
